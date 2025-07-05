@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>History - Practice Web Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat fixed;
+      color: #fff;
+      padding: 0 15px 40px;
+      min-height: 100vh;
+    }
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    }
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+    nav {
+      font-size: 1.1rem;
+    }
+    nav a, .dropbtn {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 12px;
+      cursor: pointer;
+    }
+    nav a:hover, .dropbtn:hover {
+      text-decoration: underline;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 110%;
+      left: 0;
+      background: rgba(55, 55, 55, 0.9);
+      border-radius: 4px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      min-width: 150px;
+      z-index: 100;
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 10px 15px;
+      color: #fff;
+      text-decoration: none;
+    }
+    .dropdown-content a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    main {
+      max-width: 900px;
+      margin: 20px auto 40px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 8px;
+      padding: 30px 25px;
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+    h2 {
+      margin-bottom: 30px;
+      text-align: center;
+      font-size: 2rem;
+      color: #00aaff;
+    }
+    p {
+      margin-bottom: 20px;
+      color: #eee;
+    }
+    footer {
+      background: rgba(0, 0, 0, 0.6);
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      color: #ddd;
+      margin-top: 40px;
+      border-radius: 0 0 8px 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Practice Page</h1>
+    <nav>
+      <a href="prac.html#home">Home</a>
+      <div class="dropdown">
+        <span class="dropbtn">About </span>
+        <div class="dropdown-content">
+          <a href="team.html">Our Team</a>
+          <a href="history.html">History</a>
+          <a href="mission.html">Mission</a>
+        </div>
+      </div>
+      <a href="contact.html#contact">Contact Us</a>
+      <a href="gallery.html">Gallery</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Our History</h2>
+    <p>
+      The Practice Web Page project started as a simple exercise to sharpen web development skills. Initially, it was a static page with basic HTML and CSS. Over time, we added interactivity using JavaScript and improved the design for better user experience.
+    </p>
+    <p>
+      The journey has been exciting, with each iteration introducing new challenges and learning opportunities. From understanding layout and responsiveness to implementing dropdown menus and sticky headers, every step brought us closer to creating a functional, modern webpage.
+    </p>
+    <p>
+      We are proud of how the project has evolved and look forward to continuing to expand its features and content, keeping the core mission of learning by doing at the heart of everything.
+    </p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Practice Web Page</p>
+  </footer>
+
+  <script>
+    const dropbtn = document.querySelector('.dropbtn');
+    const dropdown = document.querySelector('.dropdown-content');
+    dropbtn.addEventListener('click', e => {
+      e.stopPropagation();
+      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    });
+    window.addEventListener('click', e => {
+      if (!e.target.matches('.dropbtn')) {
+        dropdown.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

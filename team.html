@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Team - Practice Web Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat fixed;
+      color: #fff;
+      padding: 0 15px 40px;
+      min-height: 100vh;
+    }
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    }
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+    nav {
+      font-size: 1.1rem;
+    }
+    nav a, .dropbtn {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 12px;
+      cursor: pointer;
+    }
+    nav a:hover, .dropbtn:hover {
+      text-decoration: underline;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 110%;
+      left: 0;
+      background: rgba(55, 55, 55, 0.9);
+      border-radius: 4px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      min-width: 150px;
+      z-index: 100;
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 10px 15px;
+      color: #fff;
+      text-decoration: none;
+    }
+    .dropdown-content a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    main {
+      max-width: 960px;
+      margin: 20px auto 40px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 8px;
+      padding: 30px 20px;
+    }
+    h2 {
+      margin-bottom: 30px;
+      text-align: center;
+      font-size: 2rem;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+    .team-member {
+      background: rgba(55, 55, 55, 0.85);
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    .team-member:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    }
+    .team-member img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 3px solid #0066cc;
+      background-color: #7f4f24;
+    }
+    .team-member h3 {
+      margin-bottom: 8px;
+      font-size: 1.4rem;
+      color: #00aaff;
+    }
+    .team-member p.role {
+      font-style: italic;
+      color: #ccc;
+      margin-bottom: 12px;
+    }
+    .team-member p.bio {
+      font-size: 0.95rem;
+      line-height: 1.4;
+      color: #eee;
+    }
+    footer {
+      background: rgba(0, 0, 0, 0.6);
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      color: #ddd;
+      margin-top: 40px;
+      border-radius: 0 0 8px 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Practice Page</h1>
+    <nav>
+      <a href="index.html#home">Home</a>
+      <div class="dropdown">
+        <span class="dropbtn">About </span>
+        <div class="dropdown-content">
+          <a href="prac.html#team">Our Team</a>
+          <a href="history.html#history">History</a>
+          <a href="mission.html#mission">Mission</a>
+        </div>
+      </div>
+      <a href="contact.html#contact">Contact Us</a>
+      <a href="gallery.html">Gallery</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Meet the Amazing Team Behind This Site</h2>
+
+    <div class="team-grid" role="list">
+      <article class="team-member" role="listitem">
+        <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=256&q=80" alt="Photo of Sarah Namakula" />
+        <h3>Sarah Namakula</h3>
+        <p class="role">Project Manager</p>
+        <p class="bio">Sarah coordinates the project with excellent organization and keeps our team on track.</p>
+      </article>
+
+      <article class="team-member" role="listitem">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=256&q=80" alt="Photo of Michael Kato" />
+        <h3>Michael Kato</h3>
+        <p class="role">Lead Developer</p>
+        <p class="bio">Michael leads the coding efforts and ensures the website runs smoothly and efficiently.</p>
+      </article>
+
+      <article class="team-member" role="listitem">
+        <img src="https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?auto=format&fit=crop&w=256&q=80" alt="Photo of Emily Atim" />
+        <h3>Emily Atim</h3>
+        <p class="role">UI/UX Designer</p>
+        <p class="bio">Emily designs beautiful and user-friendly interfaces that make our website shine.</p>
+      </article>
+
+      <article class="team-member" role="listitem">
+        <img src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?auto=format&fit=crop&w=256&q=80" alt="Photo of David Okello" />
+        <h3>David Okello</h3>
+        <p class="role">Content Specialist</p>
+        <p class="bio">David creates engaging content that communicates our message clearly and effectively.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Practice Web Page</p>
+  </footer>
+
+  <script>
+    const dropbtn = document.querySelector('.dropbtn');
+    const dropdown = document.querySelector('.dropdown-content');
+    dropbtn.addEventListener('click', e => {
+      e.stopPropagation();
+      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    });
+    window.addEventListener('click', e => {
+      if (!e.target.matches('.dropbtn')) {
+        dropdown.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

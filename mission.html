@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mission - Practice Web Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://images.unsplash.com/photo-1497493292307-31c376b6e479?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat fixed;
+      color: #f0f0f0;
+      padding: 0 15px 50px;
+      min-height: 100vh;
+    }
+    header {
+      background: rgba(10, 10, 30, 0.8);
+      padding: 18px 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.7);
+    }
+    header h1 {
+      font-size: 2.4rem;
+      margin-bottom: 14px;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      color: #a0d8f7;
+    }
+    nav {
+      font-size: 1.15rem;
+    }
+    nav a, .dropbtn {
+      color: #a0d8f7;
+      text-decoration: none;
+      margin: 0 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    nav a:hover, .dropbtn:hover {
+      color: #ffd166;
+      text-decoration: underline;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 110%;
+      left: 0;
+      background: rgba(20, 20, 40, 0.95);
+      border-radius: 5px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.8);
+      min-width: 160px;
+      z-index: 110;
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 11px 18px;
+      color: #a0d8f7;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .dropdown-content a:hover {
+      background: #ffd166;
+      color: #222;
+    }
+    main {
+      max-width: 850px;
+      margin: 30px auto 60px;
+      background: rgba(15, 15, 40, 0.75);
+      border-radius: 12px;
+      padding: 35px 30px;
+      line-height: 1.7;
+      font-size: 1.15rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+      border: 1.5px solid #ffd166;
+    }
+    h2 {
+      margin-bottom: 28px;
+      text-align: center;
+      font-size: 2.3rem;
+      color: #ffd166;
+      letter-spacing: 2px;
+      text-shadow: 0 0 6px #ffd166aa;
+    }
+    p {
+      margin-bottom: 24px;
+      color: #dfe7f2;
+      text-shadow: 0 0 3px rgba(0,0,0,0.5);
+    }
+    footer {
+      background: rgba(10, 10, 30, 0.8);
+      text-align: center;
+      padding: 16px;
+      font-size: 0.9rem;
+      color: #aaa;
+      border-radius: 0 0 12px 12px;
+      box-shadow: inset 0 1px 4px rgba(255, 209, 102, 0.2);
+      max-width: 850px;
+      margin: 0 auto 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Practice Page</h1>
+    <nav>
+      <a href="prac.html#home">Home</a>
+      <div class="dropdown">
+        <span class="dropbtn">About </span>
+        <div class="dropdown-content">
+          <a href="team.html#team">Our Team</a>
+          <a href="history.html#history">History</a>
+          <a href="mission.html#mission">Mission</a>
+        </div>
+      </div>
+      <a href="contact.html#contact">Contact Us</a>
+      <a href="gallery.html">Gallery</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Our Mission</h2>
+    <p>
+      We strive to cultivate learning through practical experience — building projects that are engaging, functional, and serve as stepping stones for deeper understanding.
+    </p>
+    <p>
+      Our approach emphasizes hands-on development, encouraging creativity and problem-solving in real-world scenarios to boost confidence and skills.
+    </p>
+    <p>
+      We aim to inspire others to embark on their coding journey, fostering a community where knowledge sharing and collaboration thrive.
+    </p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Practice Web Page</p>
+  </footer>
+
+  <script>
+    const dropbtn = document.querySelector('.dropbtn');
+    const dropdown = document.querySelector('.dropdown-content');
+    dropbtn.addEventListener('click', e => {
+      e.stopPropagation();
+      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    });
+    window.addEventListener('click', e => {
+      if (!e.target.matches('.dropbtn')) {
+        dropdown.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

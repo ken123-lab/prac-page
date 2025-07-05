@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Practice Web Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat fixed;
+      color: #fff;
+      padding-top: 80px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    .skip-link:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      background: #000;
+      color: #fff;
+      padding: 10px;
+      z-index: 1001;
+      display: inline-block;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+      transition: background-color 0.3s ease;
+    }
+
+    header.scrolled {
+      background: rgba(0, 0, 0, 0.85);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+
+    nav {
+      font-size: 1.1rem;
+      user-select: none;
+    }
+
+    nav a,
+    .dropbtn {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 12px;
+      cursor: pointer;
+      outline: none;
+    }
+
+    nav a:hover,
+    nav a:focus,
+    .dropbtn:hover,
+    .dropbtn:focus {
+      text-decoration: underline;
+    }
+
+    nav a.active {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 110%;
+      right: 0;
+      background: rgba(55, 55, 55, 0.9);
+      border-radius: 4px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      min-width: 150px;
+      z-index: 1100;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .dropdown-content.show {
+      display: block;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px 15px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover,
+    .dropdown-content a:focus {
+      background: rgba(255, 255, 255, 0.2);
+      outline: none;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto 40px;
+      padding: 0 15px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 8px;
+    }
+
+    section {
+      margin-bottom: 40px;
+      padding: 20px;
+    }
+
+    #features div {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 8px;
+      flex: 1 1 200px;
+      box-sizing: border-box;
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.6);
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      position: relative;
+      z-index: 5;
+    }
+
+    button {
+      background: #0066cc;
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover,
+    button:focus {
+      background: #005bb5;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#home" class="skip-link">Skip to content</a>
+
+  <header id="pageHeader">
+    <h1>Welcome to My Practice Page</h1>
+    <nav role="navigation" aria-label="Main navigation">
+      <a href="#home" class="nav-link">Home</a>
+      <div class="dropdown">
+        <span
+          tabindex="0"
+          class="dropbtn"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="dropdownMenu"
+        >
+          About 
+        </span>
+        <div id="dropdownMenu" class="dropdown-content" role="menu" aria-label="About submenu">
+          <a href="team.html" role="menuitem" tabindex="-1">Our Team</a>
+          <a href="history.html" role="menuitem" tabindex="-1">History</a>
+          <a href="mission.html" role="menuitem" tabindex="-1">Mission</a>
+        </div>
+      </div>
+      <a href="contact.html#contact" class="nav-link">Contact Us</a>
+      <a href="gallery.html" class="nav-link">Gallery</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <h2>Home Section</h2>
+      <p>This is the home section. It's a great place to start learning HTML, CSS, and JavaScript!</p>
+    </section>
+    <section id="about">
+      <h2>About</h2>
+      <p>This page was built for practice. We'll style it and make it interactive with JavaScript.</p>
+    </section>
+    <section id="features">
+      <h2>Features</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-around;">
+        <div>
+          <h3>Interactive Navigation</h3>
+          <p>Accessible and keyboard-friendly dropdown menus built with semantic HTML and ARIA.</p>
+        </div>
+        <div>
+          <h3>Responsive Layout</h3>
+          <p>Looks great on all devices, thanks to flexible styling and layout techniques.</p>
+        </div>
+        <div>
+          <h3>Clean Code</h3>
+          <p>Organized HTML, reusable styles, and scalable JavaScript make this a solid foundation.</p>
+        </div>
+      </div>
+    </section>
+    <section id="updates">
+      <h2>Latest Updates</h2>
+      <p>Stay tuned for exciting new features and improvements coming soon!</p>
+      <button id="updatesButton">Click Me!</button>
+      <p id="updatesResponse"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Practice Web Page</p>
+  </footer>
+
+  <script>
+    const dropbtn = document.querySelector('.dropbtn');
+    const dropdown = document.querySelector('.dropdown-content');
+    const header = document.getElementById('pageHeader');
+
+    function toggleDropdown() {
+      const isExpanded = dropbtn.getAttribute('aria-expanded') === 'true';
+      if (isExpanded) {
+        dropdown.classList.remove('show');
+        dropbtn.setAttribute('aria-expanded', 'false');
+      } else {
+        dropdown.classList.add('show');
+        dropbtn.setAttribute('aria-expanded', 'true');
+        dropdown.querySelector('a').focus();
+      }
+    }
+
+    dropbtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleDropdown();
+    });
+
+    dropbtn.addEventListener('touchstart', (e) => {
+      e.stopPropagation();
+      toggleDropdown();
+    });
+
+    dropbtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleDropdown();
+      } else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (!dropdown.classList.contains('show')) {
+          toggleDropdown();
+        } else {
+          dropdown.querySelector('a').focus();
+        }
+      }
+    });
+
+    window.addEventListener('click', (e) => {
+      if (!e.target.closest('.dropdown')) {
+        dropdown.classList.remove('show');
+        dropbtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && dropdown.classList.contains('show')) {
+        dropdown.classList.remove('show');
+        dropbtn.setAttribute('aria-expanded', 'false');
+        dropbtn.focus();
+      }
+    });
+
+    const dropdownLinks = dropdown.querySelectorAll('a');
+    dropdownLinks.forEach((link, i) => {
+      link.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          dropdownLinks[(i + 1) % dropdownLinks.length].focus();
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          dropdownLinks[(i - 1 + dropdownLinks.length) % dropdownLinks.length].focus();
+        } else if ((e.key === 'Tab' && !e.shiftKey && i === dropdownLinks.length - 1) ||
+                   (e.key === 'Tab' && e.shiftKey && i === 0)) {
+          dropdown.classList.remove('show');
+          dropbtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    document.getElementById('updatesButton').addEventListener('click', () => {
+      document.getElementById('updatesResponse').textContent = 'Thanks for clicking the updates button!';
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
